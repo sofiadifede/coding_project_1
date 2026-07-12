@@ -1,27 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="style.css"
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Feedback Form</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <h1>Feedback Form</h1>
+    <div class="page">
+        <div class="card">
+            <h1>Feedback</h1>
+            <form id="feedbackForm">
+                <div class="field">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
 
-    <form id="feedbackForm">
-        <label for="name">Name:</label><br>
-        <input type="text" id="name" name="email" required><br><br>
+                <div class="field">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
 
-        <label for="email">Email:</label><br>
-        <input type="email" id="email" email="email" required><br><br>
+                <div class="field">
+                    <label for="comments">Comments</label>
+                    <textarea id="comments" name="comments" rows="5" required></textarea>
+                    <div class="field-meta">
+                        <span id="charCount">characters: 0</span>
+                        <span id="tooltip"></span>
+                    </div>
+                </div>
 
-        <label for=""comment">Comments:</label><br>
-        <textarea id="comments" name="comments" rows="5" cols="30" required></textarea><br><br>
+                <p id="validationMessage"></p>
 
-        <button type="submit">Submit</button>
-    </form>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+
+        <div id="feedback-display"></div>
+    </div>
 
     <script src="cp_1.js"></script>
 
